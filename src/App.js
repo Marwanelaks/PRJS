@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import './App.css';
+import { Details } from './descriptions';
 import image1 from "./imgs/1.jpg"
 import image2 from "./imgs/2.jpg"
 import image3 from "./imgs/3.jpg"
@@ -10,58 +11,39 @@ import Décoration from './secondnavImgs/Décoration.jpg'
 import Events from './secondnavImgs/Events.jpg'
 import Mariages from './secondnavImgs/Mariages.jpg'
 import Restauration from './secondnavImgs/Restauration.jpg'
+import SliderComponent from './SliderComponent';
 function App() {
   const images = [image1, image2, image3]
-  const [currentIndex, setCurrentIndex] = useState(0);
-  
-  const prevSlide = () => {
-    const lastIndex = images.length - 1;
-    const shouldResetIndex = currentIndex === 0;
-    const index = shouldResetIndex ? lastIndex : currentIndex - 1;
-    setCurrentIndex(index);
-  };
-
-  const nextSlide = () => {
-    const lastIndex = images.length - 1;
-    const shouldResetIndex = currentIndex === lastIndex;
-    const index = shouldResetIndex ? 0 : currentIndex + 1;
-    setCurrentIndex(index);
-  };
-
+  const images1 = [image1, image2, image3]
+  const images2 = [image1, image2, image3]
+  const images3 = [image1, image2, image3]
+  const images4 = [image1, image2, image3]
+  const images5 = [image1, image2, image3]
+  const images6 = [image1, image2, image3]
+  const images7 = [image1, image2, image3]
+  const [currlang,setcurrLang] = useState(true)
+  const [prevLang,setPrevLang] = useState()
+  const handleLang = () =>{
+      setcurrLang(!currlang)
+  }
   return (
     <div className="App text-center">
-      
+      <select onChange={handleLang} >
+        <option value="fr">Francais</option>
+        <option value="ar">العربية</option>
+      </select>
     <div className='container-fluid'>
       <div className='row'>
       <h1 className='text-danger text-center'>Traiteur</h1>
       </div>
       <div className='row m-auto'>
       <div className='col-md-6 my-5 description'>
-        <div className='txt'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-        </div>
-        <div className='arabic'>
-        لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
-
-أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد
-
-أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس
-
-أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت
-
-نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا
-
-كيو أوفيسيا ديسيريونتموليت انيم أيدي ايست لابوريوم 
-        </div>
+        
+       {currlang ? <div className='txt'>{Details.Traiteur.fr}</div> : <div className='arabic'>{Details.Traiteur.ar}</div>}
+   
       </div>
       <div className="slider col-md-5">
-<button className="prev btn" onClick={prevSlide}>
-&#10094;
-</button>
-<img className="slimg" src={images[currentIndex]} alt="slider" />
-<button className="next btn " onClick={nextSlide}>
-&#10095;
-</button>
+<SliderComponent imgs={images}/>
 </div>
 </div>
 <div className='row'>
@@ -69,31 +51,10 @@ function App() {
 </div>
 <div className='row'>
 <div className="slider col-md-5">
-<button className="prev btn" onClick={prevSlide}>
-&#10094;
-</button>
-<img className="slimg" src={images[currentIndex]} alt="slider" />
-<button className="next btn " onClick={nextSlide}>
-&#10095;
-</button>
+<SliderComponent imgs={images1}/>
 </div>
       <div className='col-md-6 my-5 description'>
-        <div className='txt'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-        </div>
-        <div className='arabic'>
-        لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
-
-أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد
-
-أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس
-
-أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت
-
-نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا
-
-كيو أوفيسيا ديسيريونتموليت انيم أيدي ايست لابوريوم 
-        </div>
+      {currlang ? <div className='txt'>{Details.Team.fr}</div> : <div className='arabic'>{Details.Team.ar}</div>}
       </div>
 
 </div>
@@ -146,13 +107,7 @@ function App() {
 </div>
 <div className='row' >
 <div className="slider col-md-5">
-<button className="prev btn" onClick={prevSlide}>
-&#10094;
-</button>
-<img className="slimg" src={images[currentIndex]} alt="slider" />
-<button className="next btn " onClick={nextSlide}>
-&#10095;
-</button>
+<SliderComponent imgs={images2}/>
 </div>
       <div className='col-md-6 my-5 description'>
         <div className='txt'>
@@ -197,13 +152,7 @@ function App() {
         </div>
       </div>
       <div className="slider col-md-5">
-<button className="prev btn" onClick={prevSlide}>
-&#10094;
-</button>
-<img className="slimg" src={images[currentIndex]} alt="slider" />
-<button className="next btn " onClick={nextSlide}>
-&#10095;
-</button>
+      <SliderComponent imgs={images3}/>
 </div>
 </div>
 
@@ -212,13 +161,7 @@ function App() {
 </div>
 <div className='row'>
 <div className="slider col-md-5">
-<button className="prev btn" onClick={prevSlide}>
-&#10094;
-</button>
-<img className="slimg" src={images[currentIndex]} alt="slider" />
-<button className="next btn " onClick={nextSlide}>
-&#10095;
-</button>
+<SliderComponent imgs={images4}/>
 </div>
       <div className='col-md-6 my-5 description'>
         <div className='txt'>
@@ -263,13 +206,7 @@ function App() {
         </div>
       </div>
       <div className="slider col-md-5">
-<button className="prev btn" onClick={prevSlide}>
-&#10094;
-</button>
-<img className="slimg" src={images[currentIndex]} alt="slider" />
-<button className="next btn " onClick={nextSlide}>
-&#10095;
-</button>
+      <SliderComponent imgs={images5}/>
 </div>
 </div>
 
@@ -278,13 +215,7 @@ function App() {
 </div>
 <div className='row'>
 <div className="slider col-md-5">
-<button className="prev btn" onClick={prevSlide}>
-&#10094;
-</button>
-<img className="slimg" src={images[currentIndex]} alt="slider" />
-<button className="next btn " onClick={nextSlide}>
-&#10095;
-</button>
+<SliderComponent imgs={images6}/>
 </div>
       <div className='col-md-6 my-5 description'>
         <div className='txt'>
@@ -329,13 +260,7 @@ function App() {
         </div>
       </div>
       <div className="slider col-md-5">
-<button className="prev btn" onClick={prevSlide}>
-&#10094;
-</button>
-<img className="slimg" src={images[currentIndex]} alt="slider" />
-<button className="next btn " onClick={nextSlide}>
-&#10095;
-</button>
+      <SliderComponent imgs={images7}/>
 </div>
 </div>
 
