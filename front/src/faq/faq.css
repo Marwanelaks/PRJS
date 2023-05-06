@@ -1,0 +1,29 @@
+
+  .faq-question {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+  .faq-answer {
+    font-size: 1rem;
+    line-height: 1.5;
+    display: none;
+    margin-bottom: 1rem;
+  }
+  
+  .faq-answer.show {
+    display: block;
+  }
+  
+  @media (max-width: 767px) {
+    .faq-question {
+      font-size: 1rem;
+    }
+    
+    .faq-answer {
+      font-size: 0.9rem;
+    }
+  }
+  

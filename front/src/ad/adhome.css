@@ -1,0 +1,58 @@
+
+
+.containe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .imgc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 90%;
+  }
+ 
+  .ff {
+    transform: translateX(200%);
+    animation: slideIn 1s forwards;
+    max-width: 100%;
+    height: 500px;
+    border-radius: 2rem;
+  }
+   @media (max-width: 1090px ) {
+    .ff{
+      height: 300px;
+    }
+  }
+  .image:last-child {
+    margin-right: 0;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(200%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .image-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .image {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .image:last-child {
+      margin-bottom: 0;
+    }
+  }
+  

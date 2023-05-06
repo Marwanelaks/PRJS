@@ -1,0 +1,53 @@
+@import url('https://fonts.cdnfonts.com/css/daydream-2');
+.navbar {
+  background-color: transparent;
+  border-bottom: 1px solid #ccc;
+}
+.logo {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+  margin-left: 50px;
+}
+
+.navbar-nav .nav-link {
+  margin-left: 150px;
+  font-family: 'Daydream', sans-serif;
+  font-size: 30px;
+  color: #AE862C;
+}
+
+.navbar-nav .nav-link:hover  {
+  color: #EADF90;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.cdnfonts.com/css/daydream-2');
+/* body{
+  background-color: blueviolet;
+} */
+.navbar {
+  border-bottom: 2px solid #ccc; 
+  background-color: blueviolet;
+}
+.logo {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+  margin-left: 50px;
+}

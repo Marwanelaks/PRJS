@@ -1,0 +1,29 @@
+.footer {
+    background-color: #3d3e3f1d;
+    padding: 2rem 0;
+  }
+  
+  .footer p {
+    margin-bottom: 0;
+  }
+  
+  .social-icons {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  
+  .social-icons li {
+    margin-left: 1rem;
+  }
+  
+  .social-icons a {
+    color: #212529;
+  }
+  
+  .social-icons a:hover {
+    color: #007bff;
+  }
+  
